@@ -43,9 +43,9 @@ char *khrIcd_secure_getenv(const char *name) {
 #else
 // Linux
 #ifdef HAVE_SECURE_GETENV
-    return secure_getenv(name);
+    return getenv(name);
 #elif defined(HAVE___SECURE_GETENV)
-    return __secure_getenv(name);
+    return __getenv(name);
 #else
 #pragma message(                                                                       \
     "Warning:  Falling back to non-secure getenv for environmental lookups!  Consider" \
